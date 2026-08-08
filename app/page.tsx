@@ -162,7 +162,7 @@ export default function Page() {
 
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="https://sermfy.com/auth/signup"
+              href="https://cms.sermfy.com/auth/signup"
               className="rounded-full bg-gradient-to-r from-[#22C1E8] to-[#2F80F5] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2F80F5]"
             >
               Request Demo
