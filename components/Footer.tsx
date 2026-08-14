@@ -1,104 +1,167 @@
-import { Facebook, Twitter, Linkedin, Globe, ChevronDown, X, Youtube, Instagram } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ChevronDown,
+  Facebook,
+  Globe,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
 
 const columns = [
   {
     heading: "Product",
-    links: ["Overview", "Pricing", "Customer stories"],
+    links: [
+      { label: "Overview", href: "/" },
+      { label: "Features", href: "/features" },
+      { label: "Pricing", href: "/pricing" },
+      { label: "Help Center", href: "/help-center" },
+    ],
   },
+
+  {
+    heading: "Solutions",
+    links: [
+      { label: "Member Management", href: "/features/members" },
+      { label: "Attendance Tracking", href: "/features/attendance" },
+      { label: "Church Finance", href: "/features/finance" },
+      { label: "Communication", href: "/features/communication" },
+    ],
+  },
+
   {
     heading: "Resources",
-    links: ["Blog", "Guides & tutorials", "Help center"],
+    links: [
+      { label: "Blog", href: "/blog" },
+      { label: "Guides & Tutorials", href: "/guides" },
+      { label: "Documentation", href: "/docs" },
+      { label: "Support", href: "/support" },
+    ],
   },
+
   {
     heading: "Company",
-    links: ["About us", "Careers", "Media kit"],
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+    ],
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#BBBBBB] bg-white">
-      <div className="mx-auto max-w-8xl px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
-          {/* Logo + description */}
+    <footer className="border-t border-gray-200 bg-white">
+      <div className="mx-auto max-w-screen-2xl px-6 py-16 lg:px-12 lg:py-20">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+          {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2">
-              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-                <path d="M13 0L26 7.5V18.5L13 26L0 18.5V7.5L13 0Z" fill="#3687F3" />
-                <path d="M13 0L26 7.5L13 13L0 7.5L13 0Z" fill="#0BB1D7" />
-                <path d="M13 13L26 18.5L13 26V13Z" fill="#8AC541" />
-              </svg>
-              <span className="text-2xl font-bold text-navy">Sermfy</span>
-            </a>
-            <p className="mt-4 max-w-[240px] text-[17px] leading-[30px] tracking-tight text-ink-700">
-              Apps and tools built for believers, churches, and ministries.
+            <Link href="/" className="inline-flex items-center">
+              <Image
+                src="/images/Sermfy-logo-colored-blue.png"
+                alt="Sermfy"
+                width={180}
+                height={48}
+                priority
+              />
+            </Link>
+
+            <p className="mt-6 text-base leading-7 text-gray-600">
+              Modern church management software designed to help churches
+              manage members, attendance, finances, communication, events,
+              and ministry operations from one platform.
             </p>
+
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex rounded-lg bg-brand-gradient px-6 py-3 text-white transition hover:brightness-105"
+            >
+              Request a Demo
+            </Link>
           </div>
 
-          {/* Link columns */}
-          {columns.map((col) => (
-            <div key={col.heading}>
-              <p className="text-lg font-bold text-ink-800">{col.heading}</p>
-              <ul className="mt-4 flex flex-col gap-3.5">
-                {col.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-[17px] text-ink-800 tracking-tight transition hover:text-brand-blue"
+          {/* Navigation */}
+          {columns.map((column) => (
+            <div key={column.heading}>
+              <h3 className="text-lg font-semibold">
+                {column.heading}
+              </h3>
+
+              <ul className="mt-5 space-y-4">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-600 transition hover:text-brand-blue"
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-
-          {/* Try it today */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <p className="text-2xl font-bold text-ink-800">Try It Today</p>
-            <p className="mt-4 max-w-[280px] text-[17px] leading-5 tracking-tight text-ink-800">
-              Want to see how <span className="font-bold">Sermfy Church</span>{" "}
-              can support your ministry? Get in touch for a personalized
-              walkthrough.
-            </p>
-            <button className="mt-6 rounded-lg bg-brand-gradient px-8 py-4 text-lg text-white transition hover:brightness-105 active:scale-[0.98]">
-              Start today
-            </button>
-          </div>
         </div>
 
-        <div className="mt-16 border-t border-[#A3ACB1] pt-6">
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-            <div className="flex flex-col items-center gap-4 text-sm text-ink-800 sm:flex-row sm:gap-10 sm:text-base">
-              <button className="flex items-center gap-1.5 tracking-tight">
+        {/* Bottom section */}
+        <div className="mt-16 border-t border-gray-200 pt-6">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
+              <button className="flex items-center gap-2">
                 <Globe size={18} />
                 English
                 <ChevronDown size={14} />
               </button>
-              <a href="#" className="tracking-tight">
-                Terms &amp; privacy
-              </a>
-              <p className="tracking-tight">&copy;2026 Sermfy</p>
+
+              <Link href="/terms">
+                Terms of Service
+              </Link>
+
+              <Link href="/privacy">
+                Privacy Policy
+              </Link>
+
+              <span>© 2026 Sermfy. All rights reserved.</span>
             </div>
 
-            <div className="flex items-center gap-8">
-              <a href="https://www.facebook.com/sermfy" aria-label="Facebook" className="text-ink-800 transition hover:text-brand-blue">
+            <div className="flex items-center gap-6">
+              <a
+                href="https://www.facebook.com/sermfy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <Facebook size={20} />
               </a>
 
-              <a href="#" aria-label="Youtube" className="text-ink-800 transition hover:text-brand-blue">
+              <a
+                href="https://www.youtube.com/@sermfy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
                 <Youtube size={20} />
               </a>
 
-               <a href="www.instagram.com/sermfy" aria-label="Instagram" className="text-ink-800 transition hover:text-brand-blue">
+              <a
+                href="https://www.instagram.com/sermfy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <Instagram size={20} />
               </a>
 
-              <a href="www.linkedin.com/in/sermfy" aria-label="LinkedIn" className="text-ink-800 transition hover:text-brand-blue">
+              <a
+                href="https://www.linkedin.com/company/sermfy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <Linkedin size={20} />
               </a>
-              
             </div>
           </div>
         </div>
