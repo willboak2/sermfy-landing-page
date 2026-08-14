@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Globe, ChevronDown } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Globe, ChevronDown, X, Youtube, Instagram } from "lucide-react";
 
 const columns = [
   {
@@ -79,19 +79,26 @@ export default function Footer() {
               <a href="#" className="tracking-tight">
                 Terms &amp; privacy
               </a>
-              <p className="tracking-tight">&copy;2026 Sermfy LTD</p>
+              <p className="tracking-tight">&copy;2026 Sermfy</p>
             </div>
 
             <div className="flex items-center gap-8">
-              <a href="#" aria-label="Facebook" className="text-ink-800 transition hover:text-brand-blue">
+              <a href="https://www.facebook.com/sermfy" aria-label="Facebook" className="text-ink-800 transition hover:text-brand-blue">
                 <Facebook size={20} />
               </a>
-              <a href="#" aria-label="Twitter" className="text-ink-800 transition hover:text-brand-blue">
-                <Twitter size={20} />
+
+              <a href="#" aria-label="Youtube" className="text-ink-800 transition hover:text-brand-blue">
+                <Youtube size={20} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="text-ink-800 transition hover:text-brand-blue">
+
+               <a href="www.instagram.com/sermfy" aria-label="Instagram" className="text-ink-800 transition hover:text-brand-blue">
+                <Instagram size={20} />
+              </a>
+
+              <a href="www.linkedin.com/in/sermfy" aria-label="LinkedIn" className="text-ink-800 transition hover:text-brand-blue">
                 <Linkedin size={20} />
               </a>
+              
             </div>
           </div>
         </div>
