@@ -71,7 +71,7 @@ export default function Page() {
       <header className="relative z-30 bg-[#131B4D]">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
           <Image
-  src="/image/sermfy-logo-white.png"
+  src="/sermfy-logo-white.png"
   alt="Sermfy"
   width={205}
   height={56}
@@ -125,13 +125,13 @@ export default function Page() {
             ))}
             <div className="mt-2 flex flex-col gap-3 border-t border-white/10 pt-4">
               <a
-                href="https://cms.sermfy.com"
+                href="#"
                 className="rounded-full bg-gradient-to-r from-[#22C1E8] to-[#2F80F5] px-6 py-2 text-center text-sm font-semibold text-white"
               >
                 Login
               </a>
               <a
-                href="https://cms.sermfy.com/auth/signup"
+                href="#"
                 className="rounded-full border border-white/70 px-6 py-2 text-center text-sm font-semibold text-white"
               >
                 Sign Up
@@ -145,7 +145,7 @@ export default function Page() {
       <section className="relative z-10 bg-white pt-14 lg:pt-20 pb-10">
         
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-  <div className="absolute inset-x-[-8%] top-6 opacity-50">
+  <div className="absolute inset-x-[-8%] top-6 opacity-30">
     <Image src="/wavebackground.png" alt="" width={1980} height={550} className="w-full" />
   </div>
 </div>
@@ -162,7 +162,7 @@ export default function Page() {
 
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="https://cms.sermfy.com/auth/signup"
+              href="#"
               className="rounded-full bg-gradient-to-r from-[#22C1E8] to-[#2F80F5] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2F80F5]"
             >
               Request Demo
@@ -181,7 +181,7 @@ export default function Page() {
 <div className="relative z-10 mx-auto mt-12 max-w-[1256px] px-6">
   <div className="-mb-[36%]">
     <Image
-      src="/image/laptop-2.png"
+      src="/laptop-2.png"
       alt="Sermfy dashboard shown on laptop and mobile"
       width={1400}
       height={1000}
@@ -225,7 +225,7 @@ export default function Page() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-8 gap-y-10 px-6 py-16 sm:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
             <Image
-                  src="/image/sermfy-logo-colored-blue.png"
+                  src="/sermfy-logo-colored-blue.png"
                   alt="Sermfy"
                   width={205}
                   height={56}
