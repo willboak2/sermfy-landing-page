@@ -1,5 +1,6 @@
 // components/marketing/PhotoCta.tsx
 import Image from "next/image";
+import Reveal from "./Reveal";
 
 export default function PhotoCta() {
   return (
@@ -17,9 +18,11 @@ export default function PhotoCta() {
         className="absolute inset-0 bg-gradient-to-t from-[#001838]/70 via-[#001838]/10 to-transparent"
       />
       <div className="relative flex h-full items-end justify-center px-6 pb-16 pt sm:items-center sm:pb-20 pt-100">
-        <h2 className="max-w-2xl text-center text-3xl font-semibold leading-tight text-white sm:text-5xl">
-          A better way to manage the modern church.
-        </h2>
+        <Reveal>
+          <h2 className="max-w-2xl text-center text-3xl font-semibold leading-tight text-white sm:text-5xl">
+            A better way to manage the modern church.
+          </h2>
+        </Reveal>
       </div>
     </section>
   );

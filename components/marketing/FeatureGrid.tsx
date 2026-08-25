@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
+import Reveal from "./Reveal";
 
 type Feature = { icon: LucideIcon; title: string; description: string };
 
@@ -30,20 +31,25 @@ export default function FeatureGrid() {
   return (
     <section id="explore-features" className="bg-brand-gradient py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-center text-4xl font-bold text-white sm:text-5xl">Explore Features</h2>
+        <Reveal>
+          <h2 className="text-center text-4xl font-bold text-white sm:text-5xl">Explore Features</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-white/90">
+            A complete church management system covering membership, attendance, communication, and finance —
+            trusted by churches across Ghana and beyond.
+          </p>
+        </Reveal>
 
         <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="flex flex-col items-center text-center transition-transform duration-200 hover:-translate-y-1"
-            >
-              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-navy">
-                <Icon size={36} strokeWidth={2} className="text-white" />
-              </span>
-              <h3 className="mt-6 text-xl font-bold text-white">{title}</h3>
-              <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-white/90">{description}</p>
-            </div>
+          {FEATURES.map(({ icon: Icon, title, description }, i) => (
+            <Reveal key={title} delay={(i % 3) * 100}>
+              <div className="flex flex-col items-center text-center transition-transform duration-200 hover:-translate-y-1">
+                <span className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-navy">
+                  <Icon size={36} strokeWidth={2} className="text-white" />
+                </span>
+                <h3 className="mt-6 text-xl font-bold text-white">{title}</h3>
+                <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-white/90">{description}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

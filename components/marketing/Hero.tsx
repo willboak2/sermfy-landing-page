@@ -1,5 +1,6 @@
 // components/marketing/Hero.tsx
 import Image from "next/image";
+import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
@@ -18,17 +19,19 @@ export default function Hero() {
         style={{ backgroundImage: "url(/images/wavebackground.png)" }}
       />
 
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <h1 className="text-4xl font-semibold leading-tight tracking-tight text-black sm:text-6xl">
-          Sermfy{" "}
-          <span className="bg-brand-gradient bg-clip-text text-transparent">
+      <Reveal className="mx-auto max-w-4xl px-6 text-center">
+        <p className="text-4xl font-semibold leading-tight tracking-tight text-black sm:text-6xl">
+          Sermfy
+          <br className="sm:hidden" />{" "}
+          <span className="whitespace-nowrap bg-brand-gradient bg-clip-text text-transparent">
             Church Growth
-          </span>{" "}
-          Management System
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-[#5E5E5E] sm:text-2xl">
-          Premium church growth software built for modern churches.
+          </span>
+          <br className="sm:hidden" />{" "}
+          <span className="whitespace-nowrap">Management System</span>
         </p>
+        <h1 className="mx-auto mt-6 max-w-2xl text-lg text-[#5E5E5E] sm:text-2xl">
+          Premium church growth software built for modern churches.
+        </h1>
 
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
@@ -45,9 +48,9 @@ export default function Hero() {
             See Features
           </a>
         </div>
-      </div>
+      </Reveal>
 
-      <div className="relative z-10 mx-auto mt-16 -mb-32 max-w-7xl px-6 sm:-mb-120">
+      <Reveal delay={150} className="relative z-10 mx-auto mt-16 -mb-32 max-w-7xl px-6 sm:-mb-120">
         <Image
           src="/images/laptop.png"
           alt="Sermfy CMS dashboard shown on a laptop and mobile phone"
@@ -56,7 +59,7 @@ export default function Hero() {
           className="h-auto w-full max-w-5xl mx-auto"
           priority
         />
-      </div>
+      </Reveal>
     </section>
   );
 }
