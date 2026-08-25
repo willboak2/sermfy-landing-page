@@ -36,7 +36,7 @@ export default function SiteHeader() {
             width={150}
             height={41}
             priority
-            className="block lg:hidden"
+            className="block h-auto w-24 lg:hidden"
           />
           <Image
             src="/images/Sermfy-logo-white.png"

@@ -27,7 +27,11 @@ export default function Hero() {
             Church Growth
           </span>
           <br className="sm:hidden" />{" "}
-          <span className="whitespace-nowrap">Management System</span>
+          <span className="whitespace-nowrap">
+            Management
+            <br className="sm:hidden" />{" "}
+            System
+          </span>
         </p>
         <h1 className="mx-auto mt-6 max-w-2xl text-lg text-[#5E5E5E] sm:text-2xl">
           Premium church growth software built for modern churches.
@@ -50,7 +54,7 @@ export default function Hero() {
         </div>
       </Reveal>
 
-      <Reveal delay={150} className="relative z-10 mx-auto mt-16 -mb-32 max-w-7xl px-6 sm:-mb-120">
+      <Reveal delay={150} className="relative z-10 mx-auto mt-16 -mb-52 max-w-7xl px-6 sm:-mb-120">
         <Image
           src="/images/laptop.png"
           alt="Sermfy CMS dashboard shown on a laptop and mobile phone"
