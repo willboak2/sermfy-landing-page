@@ -1,0 +1,46 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand */
+  --color-brand-navy: #152259;
+  --color-brand-blue-start: #0bb1d7;
+  --color-brand-blue-end: #3687f3;
+  --color-brand: #3687f3;
+  --color-brand-foreground: #ffffff;
+  --color-sky: #0bb1d7;
+
+  --background-image-brand-gradient: linear-gradient(139.69deg, #0bb1d7 -4.87%, #3687f3 88.18%);
+
+  /* Semantic tokens */
+  --color-background: #ffffff;
+  --color-foreground: #152259;
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+  --color-border: #e5e7eb;
+  --color-card: #ffffff;
+  --color-card-foreground: #152259;
+  --color-primary: #152259;
+  --color-primary-foreground: #ffffff;
+  --color-navy: #152259;
+  --color-navy-foreground: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
