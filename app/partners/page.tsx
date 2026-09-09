@@ -55,6 +55,7 @@ const BENEFITS = [
 ];
 
 const APPLY_URL = "https://cms.sermfy.com/partners/apply";
+const LOGIN_URL = "https://cms.sermfy.com/partners/login";
 
 export default function PartnersPage() {
   return (
@@ -92,6 +93,13 @@ export default function PartnersPage() {
               How it works
             </a>
           </div>
+
+          <p className="mt-6 text-sm text-[#5E5E5E]">
+            Already a partner?{" "}
+            <a href={LOGIN_URL} className="font-semibold text-brand hover:opacity-80">
+              Log in
+            </a>
+          </p>
         </Reveal>
       </section>
 
@@ -188,6 +196,12 @@ export default function PartnersPage() {
           >
             Apply to Become a Partner
           </a>
+          <p className="mt-4 text-sm text-white/70">
+            Already a partner?{" "}
+            <a href={LOGIN_URL} className="font-semibold text-white hover:opacity-80">
+              Log in
+            </a>
+          </p>
         </Reveal>
       </section>
     </main>
