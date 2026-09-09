@@ -54,13 +54,7 @@ const BENEFITS = [
   "Marketing resources to help you promote Sermfy",
 ];
 
-const APPLY_MAILTO =
-  "mailto:support@mail.sermfy.com?subject=" +
-  encodeURIComponent("Sermfy Partner Program Application") +
-  "&body=" +
-  encodeURIComponent(
-    "Hi Sermfy team,\n\nI'd like to apply for the Partner Program.\n\nFull name:\nOrganization (if any):\nPhone number:\n\n"
-  );
+const APPLY_URL = "https://cms.sermfy.com/partners/apply";
 
 export default function PartnersPage() {
   return (
@@ -86,7 +80,7 @@ export default function PartnersPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={APPLY_MAILTO}
+              href={APPLY_URL}
               className="w-auto rounded-full bg-brand-gradient px-8 py-4 text-center text-lg font-medium text-white transition hover:opacity-90"
             >
               Apply to Become a Partner
@@ -189,7 +183,7 @@ export default function PartnersPage() {
             Applications are reviewed by our team — we&rsquo;ll follow up by email once you&rsquo;re approved.
           </p>
           <a
-            href={APPLY_MAILTO}
+            href={APPLY_URL}
             className="mt-8 inline-block rounded-full bg-gradient-to-r from-sky to-brand px-8 py-4 text-center text-lg font-medium text-white transition hover:opacity-90"
           >
             Apply to Become a Partner
