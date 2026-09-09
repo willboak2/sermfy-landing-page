@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/marketing/Hero";
 import FeatureGrid from "@/components/marketing/FeatureGrid";
+import PartnerSection from "@/components/marketing/PartnerSection";
 import PhotoCta from "@/components/marketing/PhotoCta";
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function HomePage() {
     <main>
       <Hero />
       <FeatureGrid />
+      <PartnerSection />
       <PhotoCta />
     </main>
   );
