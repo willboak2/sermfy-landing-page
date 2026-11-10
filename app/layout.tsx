@@ -1,8 +1,8 @@
-// app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import SiteHeader from "@/components/marketing/SiteHeader";
-import SiteFooter from "@/components/marketing/SiteFooter";
+import SiteHeader from "@/components/site/SiteHeader";
+import SiteFooter from "@/components/site/SiteFooter";
+import { SOCIAL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,11 +11,26 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const DESCRIPTION =
+  "Sermfy makes software for churches and ministries: Sermfy CMS, Sermfy Stream, Sermfy Presenter and Sermfy Go.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sermfy.com"),
-  title: "Sermfy — Church Growth Management System",
-  description:
-    "Premium church growth software built for modern churches. Manage members, attendance, finance, groups, and communication in one place.",
+  title: { default: "Sermfy: software for churches and ministries", template: "%s | Sermfy" },
+  description: DESCRIPTION,
+  openGraph: {
+    type: "website",
+    siteName: "Sermfy",
+    url: "https://www.sermfy.com",
+    title: "Sermfy: software for churches and ministries",
+    description: DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image" },
+  icons: { icon: "/favicon.ico", apple: "/brand/sermfy-mark.png" },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
 };
 
 const organizationSchema = {
@@ -23,31 +38,27 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Sermfy",
   url: "https://www.sermfy.com/",
-  logo: "https://www.sermfy.com/images/sermfy-cms-logo-footer.png",
-  description: "Premium church growth software built for modern churches.",
-  sameAs: [
-    "https://www.youtube.com/@sermfy",
-    "https://www.facebook.com/sermfy",
-    "https://www.instagram.com/sermfy",
-  ],
+  logo: "https://www.sermfy.com/brand/sermfy-mark.png",
+  description: DESCRIPTION,
+  sameAs: SOCIAL.map((s) => s.href),
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans antialiased text-[#272727]">
+      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+        >
+          Skip to content
+        </a>
         <SiteHeader />
-        {children}
+        <main id="main">{children}</main>
         <SiteFooter />
       </body>
     </html>

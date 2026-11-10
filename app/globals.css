@@ -1,20 +1,41 @@
-/* app/globals.css */
 @import "tailwindcss";
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand */
+  /* Sermfy brand, sampled from the official logo */
+  --color-sermfy-green: #19ab5d;
+  --color-sermfy-green-dark: #128a4a;
+  --color-sermfy-navy: #10388f;
+  --color-sermfy-sky: #00aeff;
+  --color-sermfy-lime: #c0fb01;
+
+  /* Site surfaces */
+  --color-paper: #ffffff;
+  --color-warm: #f6f4ef;
+  --color-ink: #0d1117;
+  --color-ink-soft: #4a5260;
+  --color-line: #e6e3dc;
+  --color-charcoal: #111317;
+  --color-charcoal-2: #1a1d22;
+  --color-on-dark: #f3f4f6;
+  --color-on-dark-soft: #a3a8b3;
+
+  /* Product colours, each taken from the product's own app or logo */
+  --color-cms: #3687f3;
+  --color-stream: #a66dfb;
+  --color-presenter: #00aeff;
+  --color-go: #c0fb01;
+  --color-go-deep: #044a1a;
+
+  /* Kept for the older pages (pricing, partners, privacy, terms, documentation) */
   --color-brand-navy: #152259;
   --color-brand-blue-start: #0bb1d7;
   --color-brand-blue-end: #3687f3;
   --color-brand: #3687f3;
   --color-brand-foreground: #ffffff;
   --color-sky: #0bb1d7;
-
   --background-image-brand-gradient: linear-gradient(139.69deg, #0bb1d7 -4.87%, #3687f3 88.18%);
-
-  /* Semantic tokens */
   --color-background: #ffffff;
   --color-foreground: #152259;
   --color-muted: #f3f4f6;
@@ -26,6 +47,31 @@
   --color-primary-foreground: #ffffff;
   --color-navy: #152259;
   --color-navy-foreground: #ffffff;
+
+  --animate-rise: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-menu: menu 0.18s ease-out both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes menu {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 html {
@@ -34,6 +80,28 @@ html {
 
 body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Product screenshots: one soft, controlled shadow everywhere */
+.screen-shadow {
+  box-shadow:
+    0 1px 2px rgb(13 17 23 / 0.06),
+    0 24px 60px -24px rgb(13 17 23 / 0.35);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -42,5 +110,9 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
