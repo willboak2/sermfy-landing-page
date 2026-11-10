@@ -230,8 +230,8 @@ export function AppsTeaser() {
             On the web, on your phone and on your computer.
           </h2>
           <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-soft">
-            Sign in on the web, add Sermfy Go to your phone&apos;s home screen, and download Sermfy Stream for
-            Windows or Mac.
+            Download Sermfy Members and Sermfy Go for Android, sign in to Sermfy CMS on the web, and download
+            Sermfy Stream for Windows or Mac.
           </p>
           <Link
             href="/apps"

@@ -17,6 +17,9 @@ export const LINKS = {
   go: "https://go.sermfy.com",
   creator: "https://creator.sermfy.com",
   members: "https://members.sermfy.com",
+  /** Android app files, in the public `downloads` bucket next to the Stream installers. */
+  membersAndroid: "https://members.sermfy.com/download/android",
+  goAndroid: "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/go/latest/Sermfy-Go.apk",
   help: "https://help.sermfy.com",
   email: "mailto:support@sermfy.com",
 } as const;
@@ -79,7 +82,7 @@ export const SCREENS = {
     height: 2532,
   },
   creatorStudio: { src: null, alt: "Sermfy Creator Studio", width: 1440, height: 900 },
-  memberPortal: { src: null, alt: "Sermfy Member", width: 1170, height: 2532 },
+  memberPortal: { src: null, alt: "Sermfy Members app", width: 1170, height: 2532 },
   adminApp: { src: null, alt: "Sermfy Admin app", width: 1170, height: 2532 },
 } satisfies Record<string, Screen>;
 
@@ -314,6 +317,7 @@ export const PRODUCTS: Product[] = [
         items: [
           "Shows and episodes from churches and ministries",
           "Playlists, history and playback speed",
+          "Download episodes to listen offline in the Android app",
           "Recommendations made for each listener",
         ],
       },
@@ -358,7 +362,12 @@ export type App = {
   platforms: string;
   status: AppStatus;
   statusLabel: string;
+  /** Anchor on /apps, e.g. /apps#sermfy-go (the Go website's Get the app links there). */
+  id?: string;
   action?: { label: string; href: string };
+  secondary?: { label: string; href: string };
+  /** A line under the buttons, e.g. version and size. */
+  note?: string;
   /** Shown when the web app can be added to a home screen. */
   installable?: boolean;
   screen?: keyof typeof SCREENS;
@@ -401,16 +410,6 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         action: { label: "Open", href: LINKS.creator },
         screen: "creatorStudio",
       },
-      {
-        name: "Sermfy Member",
-        icon: { src: "/brand/member-icon.png", width: 256, height: 256, full: true },
-        description: "For church members: profile, giving, announcements and more. Enter your church code to start.",
-        platforms: "Any browser",
-        status: "available",
-        statusLabel: "Available",
-        action: { label: "Open", href: LINKS.members },
-        screen: "memberPortal",
-      },
     ],
   },
   {
@@ -427,22 +426,28 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         screen: "adminApp",
       },
       {
-        name: "Sermfy Member",
+        id: "sermfy-members",
+        name: "Sermfy Members",
         icon: { src: "/brand/member-icon.png", width: 256, height: 256, full: true },
-        description: "The member app for your church. Until it reaches the stores, use the web version.",
-        platforms: "Android and iPhone",
-        status: "coming",
-        statusLabel: "Not in app stores yet",
-        action: { label: "Use on the web", href: LINKS.members },
+        description: "The app for church members. Sign in with your church code.",
+        platforms: "Android. iPhone coming soon.",
+        status: "available",
+        statusLabel: "Android download",
+        action: { label: "Download for Android", href: LINKS.membersAndroid },
+        note: "Version 0.4.2, about 75 MB",
+        screen: "memberPortal",
       },
       {
+        id: "sermfy-go",
         name: "Sermfy Go",
         icon: { src: "/brand/go-icon.png", width: 256, height: 256, full: true },
-        description: "Until the app reaches the stores, add the Sermfy Go web app to your home screen.",
-        platforms: "Android and iPhone",
-        status: "install",
-        statusLabel: "Install from the web",
-        action: { label: "Open Sermfy Go", href: LINKS.go },
+        description: "Podcasts from churches and ministries, with downloads for listening offline.",
+        platforms: "Android. On iPhone, add the web app to your home screen.",
+        status: "available",
+        statusLabel: "Android download",
+        action: { label: "Download for Android", href: LINKS.goAndroid },
+        secondary: { label: "Open on the web", href: LINKS.go },
+        note: "Version 0.2.9, about 112 MB",
         installable: true,
         screen: "goPhoneShow",
       },

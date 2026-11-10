@@ -52,7 +52,12 @@ export default function AppsPage() {
                 </Reveal>
               ))}
             </div>
-            {g.id === "mobile" ? <InstallSteps /> : null}
+            {g.id === "mobile" ? (
+              <>
+                <AndroidSteps />
+                <InstallSteps />
+              </>
+            ) : null}
           </div>
         </section>
       ))}
@@ -63,7 +68,10 @@ export default function AppsPage() {
 function AppCard({ app: a, light }: { app: App; light: boolean }) {
   const phoneShot = a.screen ? SCREENS[a.screen].height > SCREENS[a.screen].width : false;
   return (
-    <article className={`flex h-full flex-col overflow-hidden rounded-3xl ${light ? "bg-white" : "bg-warm"}`}>
+    <article
+      id={a.id}
+      className={`flex h-full scroll-mt-24 flex-col overflow-hidden rounded-3xl ${light ? "bg-white" : "bg-warm"}`}
+    >
       <div className="flex items-start gap-4 p-6 md:p-8">
         <span
           className="flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-[22%] ring-1 ring-black/5"
@@ -84,15 +92,25 @@ function AppCard({ app: a, light }: { app: App; light: boolean }) {
           </div>
           <p className="mt-1 text-sm text-ink-soft">{a.platforms}</p>
           <p className="mt-3 leading-relaxed text-ink">{a.description}</p>
-          {a.action ? (
-            <a
-              href={a.action.href}
-              className="mt-5 inline-flex rounded-full bg-ink px-5 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
-            >
-              {a.action.label}
-            </a>
+          {a.action || a.secondary ? (
+            <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+              {a.action ? (
+                <a
+                  href={a.action.href}
+                  className="inline-flex rounded-full bg-ink px-5 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+                >
+                  {a.action.label}
+                </a>
+              ) : null}
+              {a.secondary ? (
+                <a href={a.secondary.href} className="text-sm font-medium text-ink hover:underline">
+                  {a.secondary.label}
+                </a>
+              ) : null}
+            </div>
           ) : null}
-          {a.installable && a.status !== "install" ? (
+          {a.note ? <p className="mt-3 text-xs text-ink-soft">{a.note}</p> : null}
+          {a.installable && !a.id ? (
             <p className="mt-4 text-sm text-ink-soft">Can be added to your phone or computer as an app.</p>
           ) : null}
         </div>
@@ -107,6 +125,28 @@ function AppCard({ app: a, light }: { app: App; light: boolean }) {
         </div>
       ) : null}
     </article>
+  );
+}
+
+function AndroidSteps() {
+  const steps = [
+    "Tap Download for Android and wait for the download to finish.",
+    "Open the downloaded file. If your phone asks, allow your browser to install apps.",
+    "Tap Install, then open the app.",
+  ];
+  return (
+    <div className="mt-14">
+      <h3 className="text-xl font-semibold tracking-tight">Install on Android</h3>
+      <p className="mt-2 text-ink-soft">The apps aren&apos;t on Google Play yet, so they install from the downloaded file.</p>
+      <ol className="mt-6 grid gap-5 md:grid-cols-3">
+        {steps.map((text, i) => (
+          <li key={text} className="rounded-2xl border border-line p-6">
+            <span className="text-sm font-semibold text-sermfy-green">{i + 1}</span>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">{text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 
@@ -127,7 +167,7 @@ function InstallSteps() {
   ];
   return (
     <div className="mt-14">
-      <h3 className="text-xl font-semibold tracking-tight">Add a web app to your home screen</h3>
+      <h3 className="text-xl font-semibold tracking-tight">iPhone and computers: add the web app</h3>
       <p className="mt-2 text-ink-soft">Works for Sermfy Go and Sermfy CMS.</p>
       <ol className="mt-6 grid gap-5 md:grid-cols-3">
         {steps.map((s, i) => (

@@ -35,19 +35,35 @@ Section "Churches using Sermfy CMS" is hidden on the live site until `LOGOS_APPR
   Revival Nation (Altar of Fire's has a grey frame baked in). Grace Community Baptist Church has no
   logo at all.
 
+## Android app files
+
+Hosted in the public `downloads` bucket (Neon Object Storage, prod branch, same place as the Stream
+installers). `latest/` is overwritten on each release; each version also keeps its own copy.
+
+| App | Latest | Version copy |
+|---|---|---|
+| Sermfy Members 0.4.2 | `members/latest/Sermfy-Members.apk` | `members/0.4.2/Sermfy-Members-0.4.2.apk` |
+| Sermfy Go 0.2.9 | `go/latest/Sermfy-Go.apk` | `go/0.2.9/Sermfy-Go-0.2.9.apk` |
+
+When a new build goes up, update the version and size in `lib/site.ts` (and in sermfy-member's
+`lib/app-download.ts`).
+
 ## Content choices to confirm
 
 - Sermfy green is `#19AB5D`, taken from the green triangle in the logo (no green existed in code).
 - Go screenshots use Demo Church and BFMI content. Apostle Joshua Selman / Gospel Feed shows were
   kept off, since they are another ministry's content.
 - Presenter: AI Assist and speech to text are not advertised (AI Assist is off screen for a rebuild).
-- Go: phone downloads are not advertised (the phone app is not released).
+- Go and Members: Android downloads are offered as files from the downloads bucket (not Google Play).
 - Get Started goes to the product list on the homepage.
 
 ## Problems found on other sites (not fixed here)
 
-- go.sermfy.com "Get the app" links to a Google Play page that returns 404.
+- go.sermfy.com "Get the app" linked to a Google Play page that returns 404. Fixed on CMS branch
+  `fix/go-get-app-link`: it now goes to www.sermfy.com/apps#sermfy-go, so deploy it with or after
+  this site.
 - presenter.sermfy.com: download button points to a GitHub release that returns 404 (from the
   2026-11-09 inventory).
-- members.sermfy.com page title is still "Create Next App".
+- members.sermfy.com: now a download page for the Android app (sermfy-member branch
+  `feature/app-download-landing`), title fixed.
 - stream.sermfy.com does not exist; the site links to studio.sermfy.com instead.
