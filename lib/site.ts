@@ -21,7 +21,7 @@ export const LINKS = {
   membersAndroid: "https://members.sermfy.com/download/android",
   goAndroid: "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/go/latest/Sermfy-Go.apk",
   help: "https://help.sermfy.com",
-  email: "mailto:support@sermfy.com",
+  email: "mailto:support@mail.sermfy.com",
 } as const;
 
 export const SOCIAL = [

@@ -55,7 +55,7 @@ export default function AboutPage() {
           <p className="mt-4 text-lg text-ink-soft">
             Email{" "}
             <a href={LINKS.email} className="font-medium text-ink underline underline-offset-4">
-              support@sermfy.com
+              support@mail.sermfy.com
             </a>{" "}
             or see the{" "}
             <a href={LINKS.help} className="font-medium text-ink underline underline-offset-4">

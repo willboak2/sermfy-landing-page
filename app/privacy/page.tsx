@@ -94,7 +94,7 @@ const sections: LegalSection[] = [
       },
       { type: "list", items: ["Continued communication", "Continued collection or processing of your personal data"] },
       { type: "paragraph", text: "You may do so at any time by contacting us at:" },
-      { type: "paragraph", text: "Support: support@sermfy.com" },
+      { type: "paragraph", text: "Support: support@mail.sermfy.com" },
     ],
   },
   {
@@ -225,7 +225,7 @@ const sections: LegalSection[] = [
       { type: "subheading", text: "Sermfy" },
       {
         type: "list",
-        items: ["Support: support@sermfy.com", "Address: Takoradi, West Fijai"],
+        items: ["Support: support@mail.sermfy.com", "Address: Takoradi, West Fijai"],
       },
     ],
   },

@@ -286,7 +286,7 @@ const sections: LegalSection[] = [
         type: "list",
         items: [
           "+233506698846",
-          "Email: support@sermfy.com",
+          "Email: support@mail.sermfy.com",
           "Address: Takoradi, Western Region, Ghana",
         ],
       },

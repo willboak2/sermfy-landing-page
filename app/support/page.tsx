@@ -17,7 +17,7 @@ const OPTIONS = [
   },
   {
     title: "Email us",
-    text: "support@sermfy.com",
+    text: "support@mail.sermfy.com",
     href: LINKS.email,
     cta: "Send an email",
   },
