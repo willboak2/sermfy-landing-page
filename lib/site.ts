@@ -442,7 +442,7 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         name: "Sermfy Go",
         icon: { src: "/brand/go-icon.png", width: 256, height: 256, full: true },
         description: "Podcasts from churches and ministries, with downloads for listening offline.",
-        platforms: "Android. On iPhone, add the web app to your home screen.",
+        platforms: "Android app. On iPhone, use the web app for now: iPhone app coming soon.",
         status: "available",
         statusLabel: "Android download",
         action: { label: "Download for Android", href: LINKS.goAndroid },

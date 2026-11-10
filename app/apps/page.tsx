@@ -168,7 +168,7 @@ function InstallSteps() {
   return (
     <div className="mt-14">
       <h3 className="text-xl font-semibold tracking-tight">iPhone and computers: add the web app</h3>
-      <p className="mt-2 text-ink-soft">Works for Sermfy Go and Sermfy CMS.</p>
+      <p className="mt-2 text-ink-soft">On iPhone, Sermfy Go works this way until the iPhone app is out. Sermfy CMS can be added the same way.</p>
       <ol className="mt-6 grid gap-5 md:grid-cols-3">
         {steps.map((s, i) => (
           <li key={s.title} className="rounded-2xl border border-line p-6">
