@@ -13,12 +13,12 @@ shows only the product mark until a real screenshot is added.
 | `public/screens/presenter-output.webp` | Live output crop (congregation screen) | same, small (321×179) |
 | `public/screens/go-web-home.webp` | go.sermfy.com home, computer | live site, signed out |
 | `public/screens/go-phone-show.webp` | BFMI show on a phone | live site, signed out |
+| `public/screens/cms-*.webp` (dashboard, members, attendance, finance, follow-up) | Sermfy CMS | local CMS on DEV, "Sermfy Demo Church" (made-up people, login demo.admin@sermfy.test), 2026-11-10 |
 
 ## Screenshots still missing
 
 | Key in `SCREENS` | Needed | Why not captured |
 |---|---|---|
-| `cmsDashboard`, `cmsMembers`, `cmsAttendance`, `cmsReports` | CMS dashboard, members, attendance, reports | Dev data is test junk ("Throwaway Deletetest"), shows a "grace period ended" banner and Ask Sera (not public). Needs a clean demo church. |
 | `streamProduction`, `streamMultiview` | Stream during a real production | No cameras on this PC; best captured on the church PC during a service. |
 | `creatorStudio` | Creator Studio | Needs a creator login. |
 | `memberPortal`, `adminApp` | Member and Admin apps on a phone | Not captured yet (emulator). |

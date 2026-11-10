@@ -39,10 +39,11 @@ export type Screen = {
 };
 
 export const SCREENS = {
-  cmsDashboard: { src: null, alt: "Sermfy CMS dashboard", width: 1440, height: 900 },
-  cmsMembers: { src: null, alt: "Sermfy CMS members list", width: 1440, height: 900 },
-  cmsReports: { src: null, alt: "Sermfy CMS reports", width: 1440, height: 900 },
-  cmsAttendance: { src: null, alt: "Sermfy CMS attendance", width: 1440, height: 900 },
+  cmsDashboard: { src: "/screens/cms-dashboard.webp", alt: "Sermfy CMS dashboard", width: 2560, height: 1600 },
+  cmsMembers: { src: "/screens/cms-members.webp", alt: "Members list", width: 2560, height: 1600 },
+  cmsReports: { src: "/screens/cms-finance.webp", alt: "Finance overview with income by month", width: 2560, height: 1600 },
+  cmsFollowUp: { src: "/screens/cms-follow-up.webp", alt: "Follow-up overview", width: 2560, height: 1600 },
+  cmsAttendance: { src: "/screens/cms-attendance.webp", alt: "Attendance history across branches", width: 2560, height: 1600 },
   streamProduction: { src: null, alt: "Sermfy Stream production window", width: 1440, height: 900 },
   streamMultiview: { src: null, alt: "Sermfy Stream multiview", width: 1440, height: 900 },
   presenterScripture: {
@@ -177,7 +178,7 @@ export const PRODUCTS: Product[] = [
       },
     ],
     hero: "cmsDashboard",
-    gallery: ["cmsMembers", "cmsAttendance", "cmsReports"],
+    gallery: ["cmsMembers", "cmsAttendance", "cmsReports", "cmsFollowUp"],
     frame: "browser",
     platforms: "Web, on any computer or phone",
     primary: { label: "Sign in", href: LINKS.cmsSignIn },
