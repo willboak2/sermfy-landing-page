@@ -3,7 +3,7 @@ import Link from "next/link"
 import { BookOpen, Rocket, Users, Wallet, Bell, ShieldCheck, FilePen, ShieldLock, Users2, Users2Icon } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Documentation — Sermfy CMS",
+  title: "Documentation",
   description: "Guides, tutorials, and references to help you get the most out of Sermfy Church Management System.",
 }
 

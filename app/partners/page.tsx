@@ -4,7 +4,7 @@ import { Link2, Share2, Wallet, Check, BarChart3, Banknote, Headset, Megaphone }
 import Reveal from "@/components/marketing/Reveal";
 
 export const metadata: Metadata = {
-  title: "Sermfy Partner Program | Earn Commission Referring Churches",
+  title: { absolute: "Sermfy Partner Program | Earn Commission Referring Churches" },
   description:
     "Join the Sermfy Partner Program. Get a unique referral link, refer churches to Sermfy, and earn recurring commission on every church that subscribes.",
   alternates: {

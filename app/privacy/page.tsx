@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { LegalPage, type LegalSection, type LegalBlock } from "@/components/marketing/legal-page"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Sermfy",
+  title: "Privacy Policy",
   description:
     "How Sermfy collects, uses, stores, and protects personal information in compliance with the Data Protection Act, 2012 (Act 843) of Ghana.",
 }

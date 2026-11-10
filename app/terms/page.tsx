@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { LegalPage, type LegalSection, type LegalBlock } from "@/components/marketing/legal-page"
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Sermfy",
+  title: "Terms & Conditions",
   description: "The terms and conditions governing your access to and use of the Sermfy platform.",
 }
 
