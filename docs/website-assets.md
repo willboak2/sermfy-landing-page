@@ -43,7 +43,7 @@ installers). `latest/` is overwritten on each release; each version also keeps i
 | App | Latest | Version copy |
 |---|---|---|
 | Sermfy Members 0.4.2 | `members/latest/Sermfy-Members.apk` | `members/0.4.2/Sermfy-Members-0.4.2.apk` |
-| Sermfy Go 0.2.9 | `go/latest/Sermfy-Go.apk` | `go/0.2.9/Sermfy-Go-0.2.9.apk` |
+| Sermfy Go 0.2.10 | `go/latest/Sermfy-Go.apk` | `go/0.2.10/Sermfy-Go-0.2.10.apk` (0.2.9 kept too) |
 
 When a new build goes up, update the version and size in `lib/site.ts` (and in sermfy-member's
 `lib/app-download.ts`).

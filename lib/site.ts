@@ -447,7 +447,7 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         statusLabel: "Android download",
         action: { label: "Download for Android", href: LINKS.goAndroid },
         secondary: { label: "Open on the web", href: LINKS.go },
-        note: "Version 0.2.9, about 112 MB",
+        note: "Version 0.2.10, about 112 MB",
         installable: true,
         screen: "goPhoneShow",
       },
