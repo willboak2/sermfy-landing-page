@@ -19,7 +19,11 @@ export const LINKS = {
   members: "https://members.sermfy.com",
   /** Android app files, in the public `downloads` bucket next to the Stream installers. */
   membersAndroid: "https://members.sermfy.com/download/android",
+  adminAndroid: "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/admin/latest/Sermfy-Admin.apk",
   goAndroid: "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/go/latest/Sermfy-Go.apk",
+  /** Same file Studio's /download/presenter serves once "presenter" is in its DOWNLOADS_PRODUCTS. */
+  presenterWindows:
+    "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/presenter/latest/Sermfy-Presenter-Setup.exe",
   help: "https://help.sermfy.com",
   email: "mailto:support@mail.sermfy.com",
 } as const;
@@ -66,7 +70,7 @@ export const SCREENS = {
   },
   presenterOutput: {
     src: "/screens/presenter-output.webp",
-    alt: "Scripture on the congregation screen",
+    alt: "Scripture on the screen in the room",
     width: 321,
     height: 179,
   },
@@ -187,8 +191,8 @@ export const PRODUCTS: Product[] = [
   {
     slug: "stream",
     name: "Sermfy Stream",
-    summary: "Live video production and streaming for church services.",
-    headline: "Produce the service. Stream it everywhere.",
+    summary: "Live video production and streaming for services and events.",
+    headline: "Produce live. Stream everywhere.",
     intro:
       "Switch cameras, add titles, mix sound and go live on several platforms at once, from one computer.",
     mark: { src: "/brand/stream-mark.png", width: 341, height: 343 },
@@ -247,10 +251,10 @@ export const PRODUCTS: Product[] = [
   {
     slug: "presenter",
     name: "Sermfy Presenter",
-    summary: "Lyrics, scripture and slides on the church screen.",
-    headline: "Scripture and songs on screen, without the scramble.",
+    summary: "Lyrics, scripture and slides on the big screen.",
+    headline: "Scripture, songs and slides on any screen.",
     intro:
-      "Plan the service order, find any verse in seconds and send lyrics, slides and media to the congregation screen.",
+      "Plan the running order, find any verse in seconds and send lyrics, slides and media to the screen in the room.",
     mark: {
       src: "/brand/presenter-mark.png",
       width: 316,
@@ -262,9 +266,9 @@ export const PRODUCTS: Product[] = [
     highlights: [
       "Bible lookup that works without internet",
       "Song library with sections and CCLI details",
-      "Service order for the whole service",
+      "Running order for the whole programme",
       "Backgrounds, media and lower thirds",
-      "Congregation screen output and NDI",
+      "Screen output to a projector or TV, and NDI",
     ],
     features: [
       {
@@ -280,33 +284,34 @@ export const PRODUCTS: Product[] = [
         items: ["Song library with verses, choruses and bridges", "CCLI details for each song", "Import songs"],
       },
       {
-        title: "The service",
-        items: ["Service order with times", "Slides, media and timers", "Preview before anything goes live"],
+        title: "Planning",
+        items: ["Running order with times", "Slides, media and timers", "Preview before anything goes live"],
       },
       {
         title: "Output",
-        items: ["Congregation screen", "Backgrounds and lower thirds", "NDI out to your video system"],
+        items: ["Output to a projector, TV or second screen", "Backgrounds and lower thirds", "NDI out to your video system"],
       },
     ],
     hero: "presenterScripture",
     gallery: ["presenterLyrics", "presenterSlides"],
     frame: "laptop",
-    platforms: "Windows",
+    platforms: "Windows 10 or 11, 64-bit",
+    // Switch to LINKS.presenterWindows ("Download for Windows") once the installer is in the bucket.
     primary: { label: "Download", href: LINKS.downloads },
     secondary: { label: "Plans and accounts", href: LINKS.studioPresenter },
   },
   {
     slug: "go",
     name: "Sermfy Go",
-    summary: "Podcasts from churches and ministries.",
+    summary: "Podcasts from churches, ministries and creators.",
     headline: "Sermons and podcasts, wherever you are.",
     intro:
-      "Listen to podcasts from churches and ministries, follow the shows you love, and publish your own with Creator Studio.",
+      "Listen to podcasts from churches, ministries and creators, follow the shows you love, and publish your own with Creator Studio.",
     mark: { src: "/brand/go-mark-light.png", width: 529, height: 406, onDark: "/brand/go-mark.png" },
     accent: "#c0fb01",
     theme: "dark",
     highlights: [
-      "Podcasts from churches and ministries",
+      "Podcasts from churches, ministries and creators",
       "Follow shows, like, save and comment",
       "Recommendations made for each listener",
       "Share any show or episode with a link",
@@ -316,7 +321,7 @@ export const PRODUCTS: Product[] = [
       {
         title: "Listening",
         items: [
-          "Shows and episodes from churches and ministries",
+          "Shows and episodes from churches, ministries and creators",
           "Playlists, history and playback speed",
           "Download episodes to listen offline in the Android app",
           "Recommendations made for each listener",
@@ -393,7 +398,7 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
       {
         name: "Sermfy Go",
         icon: { src: "/brand/go-icon.png", width: 256, height: 256, full: true },
-        description: "Listen to podcasts from churches and ministries.",
+        description: "Listen to podcasts from churches, ministries and creators.",
         platforms: "Any browser",
         status: "available",
         statusLabel: "Available",
@@ -420,10 +425,13 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
       {
         name: "Sermfy Admin",
         icon: { src: "/brand/admin-icon.png", width: 256, height: 256, full: true },
-        description: "Sermfy CMS on your phone, for church staff.",
-        platforms: "Android and iPhone",
-        status: "coming",
-        statusLabel: "Not in app stores yet",
+        id: "sermfy-admin",
+        description: "Sermfy CMS on your phone, for church staff. Sign in with your Sermfy CMS login.",
+        platforms: "Android app. iPhone app coming soon.",
+        status: "available",
+        statusLabel: "Android download",
+        action: { label: "Download for Android", href: LINKS.adminAndroid },
+        note: "Version 0.2.0, about 157 MB",
         screen: "adminApp",
       },
       {
@@ -431,7 +439,7 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         name: "Sermfy Members",
         icon: { src: "/brand/member-icon.png", width: 256, height: 256, full: true },
         description: "The app for church members. Sign in with your church code.",
-        platforms: "Android. iPhone coming soon.",
+        platforms: "Android app. iPhone app coming soon.",
         status: "available",
         statusLabel: "Android download",
         action: { label: "Download for Android", href: LINKS.membersAndroid },
@@ -442,7 +450,7 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         id: "sermfy-go",
         name: "Sermfy Go",
         icon: { src: "/brand/go-icon.png", width: 256, height: 256, full: true },
-        description: "Podcasts from churches and ministries, with downloads for listening offline.",
+        description: "Podcasts from churches, ministries and creators, with downloads for listening offline.",
         platforms: "Android app. On iPhone, use the web app for now: iPhone app coming soon.",
         status: "available",
         statusLabel: "Android download",
@@ -471,8 +479,11 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
       {
         name: "Sermfy Presenter",
         icon: { src: "/brand/presenter-mark.png", width: 316, height: 260 },
-        description: "Lyrics, scripture and slides for the church screen.",
-        platforms: "Windows",
+        description: "Lyrics, scripture and slides for the big screen.",
+        platforms: "Windows 10 or 11, 64-bit",
+        id: "sermfy-presenter",
+        // Once the installer is uploaded: status "available", action LINKS.presenterWindows
+        // ("Download for Windows"), secondary "See Presenter", note "Version 0.1.8, about 243 MB".
         status: "coming",
         statusLabel: "Download coming soon",
         action: { label: "See Presenter", href: "/products/presenter" },

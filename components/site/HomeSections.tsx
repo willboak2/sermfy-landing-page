@@ -17,14 +17,14 @@ export function Hero() {
     <section className="overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl px-4 pt-16 text-center md:px-8 md:pt-24">
         <h1 className="mx-auto max-w-4xl animate-rise text-balance text-5xl font-semibold tracking-[-0.035em] text-ink md:text-7xl">
-          Software for the whole church.
+          Manage. Stream. Present. Share.
         </h1>
         <p
           className="mx-auto mt-6 max-w-2xl animate-rise text-pretty text-lg leading-relaxed text-ink-soft md:text-xl"
           style={{ animationDelay: "80ms" }}
         >
-          Sermfy makes four products for churches and ministries: church management, live streaming, presentation
-          and podcasts.
+          Software for churches, ministries and organisations: manage your people, produce live video, put
+          content on screen and share it with the world.
         </p>
         <div
           className="mt-9 flex animate-rise flex-col items-center justify-center gap-3 sm:flex-row"
@@ -49,8 +49,9 @@ export function Hero() {
       {/* Campaign grid: real screens from three products */}
       <div className="mx-auto mt-16 max-w-7xl animate-rise px-4 md:mt-20 md:px-8" style={{ animationDelay: "240ms" }}>
         <div className="relative">
+          {/* Sermfy CMS always leads (owner 2026-11-10): it is the main screen here. */}
           <ProductVisual
-            product={presenter}
+            product={cms}
             preload
             sizes="(min-width: 1280px) 1150px, 100vw"
           />
@@ -59,9 +60,9 @@ export function Hero() {
               <Shot screen="goPhoneShow" mark={go.mark.onDark} sizes="260px" dark />
             </PhoneFrame>
           </div>
-          {SCREENS[cms.hero].src ? (
+          {SCREENS[presenter.hero].src ? (
             <div className="absolute -bottom-8 left-2 hidden w-[38%] md:-bottom-14 md:left-6 md:block">
-              <ProductVisual product={cms} sizes="440px" />
+              <ProductVisual product={presenter} sizes="440px" />
             </div>
           ) : null}
         </div>
@@ -76,7 +77,7 @@ export function ProductGrid() {
     <section id="products" className="scroll-mt-16 bg-warm py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <h2 className="max-w-3xl text-balance text-4xl font-semibold tracking-[-0.03em] md:text-5xl">
-          Four products. One Sermfy.
+          Built to work together.
         </h2>
         <div className="mt-12 grid gap-4 md:grid-cols-2 md:gap-5">
           {PRODUCTS.map((p, i) => {
@@ -230,8 +231,8 @@ export function AppsTeaser() {
             On the web, on your phone and on your computer.
           </h2>
           <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-soft">
-            Download Sermfy Members and Sermfy Go for Android, sign in to Sermfy CMS on the web, and download
-            Sermfy Stream for Windows or Mac.
+            Sign in to Sermfy CMS on the web, download Sermfy Members and Sermfy Go for Android, and install
+            Sermfy Stream and Sermfy Presenter on your computer.
           </p>
           <Link
             href="/apps"
@@ -278,8 +279,9 @@ export function AboutBlock() {
       <Reveal className="mx-auto max-w-3xl px-4 text-center md:px-8">
         <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] md:text-4xl">About Sermfy</h2>
         <p className="mt-5 text-pretty text-lg leading-relaxed text-ink-soft">
-          Sermfy builds software for churches and ministries: Sermfy CMS for church administration, Sermfy Stream
-          and Sermfy Presenter for Sunday services, and Sermfy Go for podcasts.
+          Sermfy builds software for churches, ministries and organisations: Sermfy CMS for church
+          administration, Sermfy Stream and Sermfy Presenter for live services and events, and Sermfy Go for
+          podcasts.
         </p>
         <Link href="/about" className="mt-6 inline-flex items-center gap-1 font-medium text-sermfy-green hover:underline">
           More about Sermfy

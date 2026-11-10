@@ -12,17 +12,17 @@ const inter = Inter({
 });
 
 const DESCRIPTION =
-  "Sermfy makes software for churches and ministries: Sermfy CMS, Sermfy Stream, Sermfy Presenter and Sermfy Go.";
+  "Software for churches, ministries and organisations: Sermfy CMS, Sermfy Stream, Sermfy Presenter and Sermfy Go.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sermfy.com"),
-  title: { default: "Sermfy: software for churches and ministries", template: "%s | Sermfy" },
+  title: { default: "Sermfy: manage, stream, present and share", template: "%s | Sermfy" },
   description: DESCRIPTION,
   openGraph: {
     type: "website",
     siteName: "Sermfy",
     url: "https://www.sermfy.com",
-    title: "Sermfy: software for churches and ministries",
+    title: "Sermfy: manage, stream, present and share",
     description: DESCRIPTION,
   },
   twitter: { card: "summary_large_image" },

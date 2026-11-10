@@ -44,6 +44,15 @@ installers). `latest/` is overwritten on each release; each version also keeps i
 |---|---|---|
 | Sermfy Members 0.4.2 | `members/latest/Sermfy-Members.apk` | `members/0.4.2/Sermfy-Members-0.4.2.apk` |
 | Sermfy Go 0.2.10 | `go/latest/Sermfy-Go.apk` | `go/0.2.10/Sermfy-Go-0.2.10.apk` (0.2.9 kept too) |
+| Sermfy Admin 0.2.0 | `admin/latest/Sermfy-Admin.apk` | `admin/0.2.0/Sermfy-Admin-0.2.0.apk` |
+
+## Presenter download (waiting for owner)
+
+Presenter 0.1.8 installer is built (`Desktop/Sermfy Presenter Setup 0.1.8.exe`, about 243 MB) but
+not uploaded to `presenter/latest/Sermfy-Presenter-Setup.exe`. Until it is, the site keeps
+"Download coming soon". After the upload: switch Presenter's `primary` and its Apps entry to
+`LINKS.presenterWindows` (see the comments in `lib/site.ts`), and add `presenter` to Studio's
+`DOWNLOADS_PRODUCTS` so studio.sermfy.com/download/presenter works too.
 
 When a new build goes up, update the version and size in `lib/site.ts` (and in sermfy-member's
 `lib/app-download.ts`).

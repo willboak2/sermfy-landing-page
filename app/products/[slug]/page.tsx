@@ -129,7 +129,7 @@ function Gallery({ product: p }: { product: Product }) {
         {p.slug === "presenter" ? (
           <Reveal className="grid items-center gap-10 md:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What the congregation sees.</h2>
+              <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">What the room sees.</h2>
               <p className="mt-4 max-w-md text-lg leading-relaxed text-ink-soft">
                 Check every slide in Preview, then send it to the screen in the room.
               </p>

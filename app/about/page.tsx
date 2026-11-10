@@ -5,7 +5,7 @@ import { LINKS, PRODUCTS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Sermfy builds software for churches and ministries.",
+  description: "Sermfy builds software for churches, ministries and organisations.",
   alternates: { canonical: "/about" },
 };
 
@@ -18,12 +18,12 @@ export default function AboutPage() {
             About Sermfy
           </h1>
           <div className="mt-8 animate-rise space-y-5 text-lg leading-relaxed text-ink-soft md:text-xl">
-            <p>Sermfy builds software for churches and ministries.</p>
+            <p>Sermfy builds software for churches, ministries and organisations.</p>
             <p>
               Sermfy CMS runs church administration: members, attendance, finance, communication, follow-up, groups
-              and reports, for one church or many branches. Sermfy Stream and Sermfy Presenter run the Sunday
-              service: the live stream and the screen in the room. Sermfy Go carries sermons and podcasts to
-              listeners on the web.
+              and reports, for one church or many branches. Sermfy Stream and Sermfy Presenter run live services
+              and events: the stream and the screen in the room. Sermfy Go brings sermons and podcasts to
+              listeners on the web and on Android.
             </p>
           </div>
         </div>

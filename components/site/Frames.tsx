@@ -129,7 +129,7 @@ export function PhoneFrame({ children, className = "" }: { children: React.React
   );
 }
 
-/** A projection screen on a dark wall: what the congregation sees. */
+/** A projection screen on a dark wall: what the audience sees. */
 export function ProjectionFrame({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`rounded-2xl bg-[#08090b] p-[6%] pb-[8%] ${className}`}>

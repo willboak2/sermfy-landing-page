@@ -45,7 +45,7 @@ export default function SiteFooter() {
               <span className="text-[19px] font-semibold tracking-tight text-sermfy-navy">Sermfy</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-              Software for churches and ministries.
+              Software for churches, ministries and organisations.
             </p>
             <ul className="mt-6 flex gap-4 text-sm">
               {SOCIAL.map((s) => (
