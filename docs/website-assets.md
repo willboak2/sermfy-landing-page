@@ -12,7 +12,7 @@ shows only the product mark until a real screenshot is added.
 | `public/screens/presenter-slides.webp` | Presenter slides tab | same |
 | `public/screens/presenter-output.webp` | Live output crop (congregation screen) | same, small (321×179) |
 | `public/screens/go-web-home.webp` | go.sermfy.com home, computer | live site, signed out |
-| `public/screens/go-phone-show.webp` | BFMI show on a phone | live site, signed out |
+| `public/screens/go-phone-home.webp` | Go home on a phone (shows from several ministries) | live site, signed out, 2026-11-11 |
 | `public/screens/cms-*.webp` (dashboard, members, attendance, finance, follow-up) | Sermfy CMS | local CMS on DEV, "Sermfy Demo Church" (made-up people, login demo.admin@sermfy.test), 2026-11-10 |
 
 ## Screenshots still missing
@@ -60,7 +60,7 @@ When a new build goes up, update the version and size in `lib/site.ts` (and in s
 ## Content choices to confirm
 
 - Sermfy green is `#19AB5D`, taken from the green triangle in the logo (no green existed in code).
-- Go screenshots use Demo Church and BFMI content. Apostle Joshua Selman / Gospel Feed shows were
+- Go phone screenshot (2026-11-11) is the Go home with shows from several ministries, incl. Gospel Feed (owner did not want one preacher only). The computer screenshot uses Demo Church and BFMI content; Selman / Gospel Feed shows were
   kept off, since they are another ministry's content.
 - Presenter: AI Assist and speech to text are not advertised (AI Assist is off screen for a rebuild).
 - Go and Members: Android downloads are offered as files from the downloads bucket (not Google Play).

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BatteryFull, Signal, Wifi } from "lucide-react";
 import { SCREENS, type Screen } from "@/lib/site";
 
 type ScreenKey = keyof typeof SCREENS;
@@ -118,13 +119,36 @@ export function MonitorFrame({ children, className = "" }: { children: React.Rea
   );
 }
 
-/** A phone with rounded corners and a thin bezel. */
-export function PhoneFrame({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+/**
+ * A phone: thin bezel, a status bar with a camera dot above the screenshot, and corners that
+ * scale with the phone's width so they never cut into the screenshot at small sizes.
+ */
+export function PhoneFrame({
+  children,
+  screenBg = "#222222",
+  className = "",
+}: {
+  children: React.ReactNode;
+  /** The screenshot's top colour, so the status bar runs into it. */
+  screenBg?: string;
+  className?: string;
+}) {
   return (
     <div
-      className={`screen-shadow rounded-[2.4rem] border border-white/10 bg-[#0a0b0d] p-[3.2%] ${className}`}
+      className={`screen-shadow rounded-[15%/7%] bg-[#0a0b0d] p-[2.8%] ring-1 ring-white/15 ${className}`}
     >
-      <div className="overflow-hidden rounded-[2rem]">{children}</div>
+      <div className="@container overflow-hidden rounded-[12.5%/5.9%]" style={{ backgroundColor: screenBg }}>
+        <div aria-hidden className="relative flex items-center justify-between px-[9%] pb-[1.5%] pt-[4%] text-white">
+          <span className="text-[4.4cqw] font-semibold leading-none tracking-tight">9:41</span>
+          <span className="absolute left-1/2 top-[45%] size-[4cqw] -translate-x-1/2 rounded-full bg-black ring-1 ring-white/10" />
+          <span className="flex items-center gap-[1.2cqw]">
+            <Signal className="size-[4.2cqw]" strokeWidth={2.6} />
+            <Wifi className="size-[4.2cqw]" strokeWidth={2.6} />
+            <BatteryFull className="size-[5.4cqw]" strokeWidth={2.2} />
+          </span>
+        </div>
+        {children}
+      </div>
     </div>
   );
 }

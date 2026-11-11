@@ -55,9 +55,9 @@ export function Hero() {
             preload
             sizes="(min-width: 1280px) 1150px, 100vw"
           />
-          <div className="absolute -bottom-6 right-2 w-[22%] min-w-[96px] md:-bottom-10 md:right-8">
+          <div className="absolute -bottom-8 right-1 w-[27%] min-w-[100px] sm:w-[22%] md:-bottom-10 md:right-8">
             <PhoneFrame>
-              <Shot screen="goPhoneShow" mark={go.mark.onDark} sizes="260px" dark />
+              <Shot screen="goPhoneHome" mark={go.mark.onDark} sizes="260px" dark />
             </PhoneFrame>
           </div>
           {SCREENS[presenter.hero].src ? (
@@ -188,7 +188,7 @@ function GoStage({ product }: { product: Product }) {
       </div>
       <div className="absolute bottom-0 right-0 w-[28%] min-w-[110px] md:w-[24%]">
         <PhoneFrame>
-          <Shot screen="goPhoneShow" mark={product.mark.onDark} sizes="300px" dark />
+          <Shot screen="goPhoneHome" mark={product.mark.onDark} sizes="300px" dark />
         </PhoneFrame>
       </div>
     </div>
