@@ -1,3 +1,4 @@
+import { newTab } from "@/lib/links";
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { LINKS } from "@/lib/site";
@@ -41,7 +42,7 @@ export default function SupportPage() {
           {OPTIONS.map((o) => (
             <li key={o.title}>
               <a
-                href={o.href}
+                href={o.href} {...newTab(o.href)}
                 className="group flex h-full flex-col rounded-3xl bg-warm p-8 transition-transform hover:-translate-y-0.5"
               >
                 <h2 className="text-xl font-semibold tracking-tight">{o.title}</h2>

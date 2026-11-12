@@ -3,6 +3,7 @@ import Image from "next/image";
 import { APP_GROUPS, SCREENS, type App } from "@/lib/site";
 import { Shot } from "@/components/site/Frames";
 import Reveal from "@/components/marketing/Reveal";
+import { newTab } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Apps",
@@ -96,14 +97,14 @@ function AppCard({ app: a, light }: { app: App; light: boolean }) {
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
               {a.action ? (
                 <a
-                  href={a.action.href}
+                  href={a.action.href} {...newTab(a.action.href)}
                   className="inline-flex rounded-full bg-ink px-5 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
                 >
                   {a.action.label}
                 </a>
               ) : null}
               {a.secondary ? (
-                <a href={a.secondary.href} className="text-sm font-medium text-ink hover:underline">
+                <a href={a.secondary.href} {...newTab(a.secondary.href)} className="text-sm font-medium text-ink hover:underline">
                   {a.secondary.label}
                 </a>
               ) : null}

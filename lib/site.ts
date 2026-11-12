@@ -305,8 +305,7 @@ export const PRODUCTS: Product[] = [
     gallery: ["presenterLyrics", "presenterSlides"],
     frame: "laptop",
     platforms: "Windows 10 or 11, 64-bit",
-    // Switch to LINKS.presenterWindows ("Download for Windows") once the installer is in the bucket.
-    primary: { label: "Download", href: LINKS.downloads },
+    primary: { label: "Download for Windows", href: LINKS.presenterWindows },
     secondary: { label: "Plans and accounts", href: LINKS.studioPresenter },
   },
   {
@@ -505,11 +504,11 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         description: "Lyrics, scripture and slides for the big screen.",
         platforms: "Windows 10 or 11, 64-bit",
         id: "sermfy-presenter",
-        // Once the installer is uploaded: status "available", action LINKS.presenterWindows
-        // ("Download for Windows"), secondary "See Presenter", note "Version 0.1.8, about 243 MB".
-        status: "coming",
-        statusLabel: "Download coming soon",
-        action: { label: "See Presenter", href: "/products/presenter" },
+        status: "available",
+        statusLabel: "Available",
+        action: { label: "Download for Windows", href: LINKS.presenterWindows },
+        secondary: { label: "See Presenter", href: "/products/presenter" },
+        note: "Version 0.2.0, about 243 MB",
         screen: "presenterScripture",
       },
     ],

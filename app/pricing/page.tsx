@@ -1,6 +1,7 @@
 // app/pricing/page.tsx
 "use client"
 
+import { newTab } from "@/lib/links";
 import { useState } from "react"
 import Link from "next/link"
 import { Check } from "lucide-react"
@@ -198,7 +199,7 @@ export default function PricingPage() {
                 </ul>
 
                 <Link
-                  href={`https://cms.sermfy.com/auth/signup?plan=${plan.name.toLowerCase()}`}
+                  href={`https://cms.sermfy.com/auth/signup?plan=${plan.name.toLowerCase()}`} {...newTab("https://cms.sermfy.com/")}
                   className={
                     "mt-8 rounded-full px-6 py-2.5 text-center text-sm font-semibold transition-opacity hover:opacity-90 " +
                     (plan.featured

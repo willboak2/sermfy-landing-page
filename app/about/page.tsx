@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductTile } from "@/components/site/SiteHeader";
 import { LINKS, PRODUCTS } from "@/lib/site";
+import { newTab } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "About",
@@ -54,11 +55,11 @@ export default function AboutPage() {
           <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">Talk to us</h2>
           <p className="mt-4 text-lg text-ink-soft">
             Email{" "}
-            <a href={LINKS.email} className="font-medium text-ink underline underline-offset-4">
+            <a href={LINKS.email} {...newTab(LINKS.email)} className="font-medium text-ink underline underline-offset-4">
               support@mail.sermfy.com
             </a>{" "}
             or see the{" "}
-            <a href={LINKS.help} className="font-medium text-ink underline underline-offset-4">
+            <a href={LINKS.help} {...newTab(LINKS.help)} className="font-medium text-ink underline underline-offset-4">
               Help Center
             </a>
             .

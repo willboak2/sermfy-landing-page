@@ -1,3 +1,4 @@
+import { newTab } from "@/lib/links";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
@@ -149,7 +150,7 @@ export function ProductCampaign({ product }: { product: Product }) {
             >
               Explore {product.name.replace("Sermfy ", "")}
             </Link>
-            <a href={product.primary.href} className="group inline-flex items-center gap-1 text-[15px] font-medium">
+            <a href={product.primary.href} {...newTab(product.primary.href)} className="group inline-flex items-center gap-1 text-[15px] font-medium">
               {product.primary.label}
               <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
             </a>

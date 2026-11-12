@@ -1,3 +1,4 @@
+import { newTab } from "@/lib/links";
 import Image from "next/image";
 import Link from "next/link";
 import { LINKS, PRODUCTS, SOCIAL } from "@/lib/site";
@@ -64,7 +65,7 @@ export default function SiteFooter() {
                 <ul className="mt-4 space-y-3">
                   {col.links.map((l) => (
                     <li key={l.label}>
-                      <Link href={l.href} className="text-sm text-ink-soft transition-colors hover:text-ink">
+                      <Link href={l.href} {...newTab(l.href)} className="text-sm text-ink-soft transition-colors hover:text-ink">
                         {l.label}
                       </Link>
                     </li>

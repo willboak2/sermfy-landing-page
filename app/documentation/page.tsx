@@ -1,3 +1,4 @@
+import { newTab } from "@/lib/links";
 import type { Metadata } from "next"
 import Link from "next/link"
 import { BookOpen, Rocket, Users, Wallet, Bell, ShieldCheck, FilePen, ShieldLock, Users2, Users2Icon } from "lucide-react"
@@ -36,7 +37,7 @@ export default function DocumentationPage() {
           {sections.map((section) => (
             <Link
               key={section.title}
-              href={section.href}
+              href={section.href} {...newTab(section.href)}
               className="group rounded-2xl border border-border bg-card p-6 transition-colors hover:border-brand"
             >
               <span className="inline-flex size-12 items-center justify-center rounded-full bg-navy text-navy-foreground">

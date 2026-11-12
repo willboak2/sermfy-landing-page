@@ -47,13 +47,21 @@ installers). `latest/` is overwritten on each release; each version also keeps i
 | Sermfy Admin 0.2.0 | `admin/latest/Sermfy-Admin.apk` | `admin/0.2.0/Sermfy-Admin-0.2.0.apk` |
 | Sermfy Remote 1.0.0 | `remote/latest/Sermfy-Remote.apk` | `remote/1.0.0/Sermfy-Remote-1.0.0.apk` |
 
-## Presenter download (waiting for owner)
+## Desktop installers
 
-Presenter 0.1.8 installer is built (`Desktop/Sermfy Presenter Setup 0.1.8.exe`, about 243 MB) but
-not uploaded to `presenter/latest/Sermfy-Presenter-Setup.exe`. Until it is, the site keeps
-"Download coming soon". After the upload: switch Presenter's `primary` and its Apps entry to
-`LINKS.presenterWindows` (see the comments in `lib/site.ts`), and add `presenter` to Studio's
-`DOWNLOADS_PRODUCTS` so studio.sermfy.com/download/presenter works too.
+Also in the `downloads` bucket. `latest/` is what the site and Studio link to; each version keeps a
+copy, so a bad release can be rolled back by copying the old one over `latest/`.
+
+| App | Latest | Version copies |
+|---|---|---|
+| Sermfy Presenter 0.2.0 (2026-11-12) | `presenter/latest/Sermfy-Presenter-Setup.exe` | `presenter/0.2.0/` |
+| Sermfy Stream 0.3.2-test.8 (2026-11-12) | `stream/latest/Sermfy-Stream-Setup.exe` (Studio's /download/stream) | `stream/0.3.2-test.8/`, `stream/0.3.1/`, `stream/0.1.0/` |
+
+Presenter links straight to its file (`LINKS.presenterWindows`). Studio's /download/presenter
+also works once `presenter` is in Studio's `DOWNLOADS_PRODUCTS`.
+
+Links to other sites open in a new tab (`lib/links.ts`, `newTab()`); this site's pages and direct
+file downloads stay in the same tab.
 
 When a new build goes up, update the version and size in `lib/site.ts` (and in sermfy-member's
 `lib/app-download.ts`).

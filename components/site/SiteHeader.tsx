@@ -1,5 +1,6 @@
 "use client";
 
+import { newTab } from "@/lib/links";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -111,7 +112,7 @@ export default function SiteHeader() {
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href} {...newTab(item.href)}
                 aria-current={active ? "page" : undefined}
                 className={`rounded-full px-4 py-2 text-[15px] transition-colors hover:text-ink ${
                   active ? "text-ink" : "text-ink-soft"
@@ -212,7 +213,7 @@ export default function SiteHeader() {
             {NAV.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href} {...newTab(item.href)}
                 className="block border-b border-line py-4 text-2xl font-semibold tracking-tight"
               >
                 {item.label}

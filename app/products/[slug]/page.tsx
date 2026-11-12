@@ -1,3 +1,4 @@
+import { newTab } from "@/lib/links";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -51,13 +52,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </p>
           <div className="mt-9 flex animate-rise flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={p.primary.href}
+              href={p.primary.href} {...newTab(p.primary.href)}
               className="rounded-full bg-sermfy-green px-7 py-3 text-[15px] font-medium text-white transition-colors hover:bg-sermfy-green-dark"
             >
               {p.primary.label}
             </a>
             {p.secondary ? (
-              <a href={p.secondary.href} className="group inline-flex items-center gap-1.5 px-5 py-3 text-[15px] font-medium">
+              <a href={p.secondary.href} {...newTab(p.secondary.href)} className="group inline-flex items-center gap-1.5 px-5 py-3 text-[15px] font-medium">
                 {p.secondary.label}
                 <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
               </a>
@@ -104,7 +105,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </h2>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={p.primary.href}
+              href={p.primary.href} {...newTab(p.primary.href)}
               className="rounded-full bg-sermfy-green px-7 py-3 text-[15px] font-medium text-white transition-colors hover:bg-sermfy-green-dark"
             >
               {p.primary.label}

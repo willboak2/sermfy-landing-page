@@ -1,4 +1,5 @@
 // app/partners/page.tsx
+import { newTab } from "@/lib/links";
 import type { Metadata } from "next";
 import { Link2, Share2, Wallet, Check, BarChart3, Banknote, Headset, Megaphone } from "lucide-react";
 import Reveal from "@/components/marketing/Reveal";
@@ -81,7 +82,7 @@ export default function PartnersPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={APPLY_URL}
+              href={APPLY_URL} {...newTab(APPLY_URL)}
               className="w-auto rounded-full bg-brand-gradient px-8 py-4 text-center text-lg font-medium text-white transition hover:opacity-90"
             >
               Apply to Become a Partner
@@ -96,7 +97,7 @@ export default function PartnersPage() {
 
           <p className="mt-6 text-sm text-[#5E5E5E]">
             Already a partner?{" "}
-            <a href={LOGIN_URL} className="font-semibold text-brand hover:opacity-80">
+            <a href={LOGIN_URL} {...newTab(LOGIN_URL)} className="font-semibold text-brand hover:opacity-80">
               Log in
             </a>
           </p>
@@ -191,14 +192,14 @@ export default function PartnersPage() {
             Applications are reviewed by our team — we&rsquo;ll follow up by email once you&rsquo;re approved.
           </p>
           <a
-            href={APPLY_URL}
+            href={APPLY_URL} {...newTab(APPLY_URL)}
             className="mt-8 inline-block rounded-full bg-gradient-to-r from-sky to-brand px-8 py-4 text-center text-lg font-medium text-white transition hover:opacity-90"
           >
             Apply to Become a Partner
           </a>
           <p className="mt-4 text-sm text-white/70">
             Already a partner?{" "}
-            <a href={LOGIN_URL} className="font-semibold text-white hover:opacity-80">
+            <a href={LOGIN_URL} {...newTab(LOGIN_URL)} className="font-semibold text-white hover:opacity-80">
               Log in
             </a>
           </p>
