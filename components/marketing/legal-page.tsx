@@ -16,8 +16,9 @@ type LegalPageProps = {
   documentTitle: string
   intro: LegalBlock[]
   sections: LegalSection[]
-  pdfHref: string
-  pdfFileName: string
+  /** A PDF copy to download (pages without one show no button). */
+  pdfHref?: string
+  pdfFileName?: string
 }
 
 function Blocks({ blocks }: { blocks: LegalBlock[] }) {
@@ -77,14 +78,16 @@ export function LegalPage({ bannerTitle, documentTitle, intro, sections, pdfHref
       <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <h2 className="text-2xl font-bold text-primary md:text-3xl">{documentTitle}</h2>
-          <a
-            href={pdfHref}
-            download={pdfFileName}
-            className="inline-flex shrink-0 items-center gap-2 rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-          >
-            <Download className="size-4" aria-hidden />
-            Download PDF
-          </a>
+          {pdfHref ? (
+            <a
+              href={pdfHref}
+              download={pdfFileName}
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+            >
+              <Download className="size-4" aria-hidden />
+              Download PDF
+            </a>
+          ) : null}
         </div>
         <div className="mt-5 flex flex-col gap-4">
           <Blocks blocks={intro} />

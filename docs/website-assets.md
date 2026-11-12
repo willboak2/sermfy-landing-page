@@ -45,6 +45,7 @@ installers). `latest/` is overwritten on each release; each version also keeps i
 | Sermfy Members 0.4.2 | `members/latest/Sermfy-Members.apk` | `members/0.4.2/Sermfy-Members-0.4.2.apk` |
 | Sermfy Go 0.2.10 | `go/latest/Sermfy-Go.apk` | `go/0.2.10/Sermfy-Go-0.2.10.apk` (0.2.9 kept too) |
 | Sermfy Admin 0.2.0 | `admin/latest/Sermfy-Admin.apk` | `admin/0.2.0/Sermfy-Admin-0.2.0.apk` |
+| Sermfy Remote 1.0.0 | `remote/latest/Sermfy-Remote.apk` | `remote/1.0.0/Sermfy-Remote-1.0.0.apk` |
 
 ## Presenter download (waiting for owner)
 

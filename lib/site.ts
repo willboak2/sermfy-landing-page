@@ -21,6 +21,9 @@ export const LINKS = {
   membersAndroid: "https://members.sermfy.com/download/android",
   adminAndroid: "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/admin/latest/Sermfy-Admin.apk",
   goAndroid: "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/go/latest/Sermfy-Go.apk",
+  remoteAndroid:
+    "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/remote/latest/Sermfy-Remote.apk",
+  remotePrivacy: "/privacy/sermfy-remote",
   /** Same file Studio's /download/presenter serves once "presenter" is in its DOWNLOADS_PRODUCTS. */
   presenterWindows:
     "https://br-dry-term-b1sgkcop.storage.c-5.eu-central-1.aws.neon.tech/downloads/presenter/latest/Sermfy-Presenter-Setup.exe",
@@ -87,6 +90,12 @@ export const SCREENS = {
     height: 2532,
   },
   creatorStudio: { src: null, alt: "Sermfy Creator Studio", width: 1440, height: 900 },
+  remoteHome: {
+    src: "/screens/remote-phone-home.webp",
+    alt: "Sermfy Remote on a phone: Stream Remote, Presenter Remote and Lyrics Sender",
+    width: 1080,
+    height: 2400,
+  },
   memberPortal: { src: null, alt: "Sermfy Members app", width: 1170, height: 2532 },
   adminApp: { src: null, alt: "Sermfy Admin app", width: 1170, height: 2532 },
 } satisfies Record<string, Screen>;
@@ -459,6 +468,20 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         note: "Version 0.2.10, about 112 MB",
         installable: true,
         screen: "goPhoneHome",
+      },
+      {
+        id: "sermfy-remote",
+        name: "Sermfy Remote",
+        icon: { src: "/brand/remote-icon.png", width: 256, height: 256, full: true },
+        description:
+          "Control Sermfy Stream and Sermfy Presenter from a phone, and send lyrics to the Presenter operator. Scan the code the computer shows to connect.",
+        platforms: "Android app. Works with Sermfy Stream and Sermfy Presenter on the same Wi-Fi.",
+        status: "available",
+        statusLabel: "Android download",
+        action: { label: "Download for Android", href: LINKS.remoteAndroid },
+        secondary: { label: "Privacy", href: LINKS.remotePrivacy },
+        note: "Version 1.0.0, about 33 MB",
+        screen: "remoteHome",
       },
     ],
   },
