@@ -439,7 +439,7 @@ export const APP_GROUPS: { id: string; title: string; apps: App[] }[] = [
         status: "available",
         statusLabel: "Android download",
         action: { label: "Download for Android", href: LINKS.adminAndroid },
-        note: "Version 0.2.0, about 157 MB",
+        note: "Version 0.2.1, about 92 MB",
         screen: "adminApp",
       },
       {
